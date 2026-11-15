@@ -21,7 +21,7 @@ Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
 | Key | Action |
 |---|---|
 | **F9** | Effect on/off |
-| **F10** | Next preset: Noir → Sepia → Old Film → Damaged Film → your own → off |
+| **F10** | Next preset: Noir → Noir Cold → Sepia → Old Film → Damaged Film → your own → off |
 | **F11** | Re-read a custom preset file (for tweaking) |
 
 ## Settings – `UserData\LibriaMods\LibriaMods.STWB.Noir.cfg`
@@ -29,7 +29,7 @@ Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
 | Setting | Default | |
 |---|---|---|
 | `ToggleKey` / `CycleKey` / `ReloadKey` | `F9` / `F10` / `F11` | Unity `KeyCode` names |
-| `Preset` | `Noir` | Preset used by F9 (`Noir`, `Sepia`, `Old Film`, `Damaged Film` or a custom one) |
+| `Preset` | `Noir` | Preset used by F9 (`Noir`, `Noir Cold`, `Sepia`, `Old Film`, `Damaged Film` or a custom one) |
 | `Enabled` | `false` | Effect on at startup (saved when you toggle) |
 | `FadeSeconds` | `0.6` | Fade time |
 | `VerboseLog` | `false` | Log every applied setting |
