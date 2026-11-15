@@ -1,7 +1,7 @@
 # Syberia Noir
 
 A MelonLoader mod for **Syberia: The World Before** that turns the game black & white – film noir,
-sepia or a worn 1930s newsreel – with one key. Uses the game's own post-processing (HDRP), so menus,
+sepia, a worn 1930s newsreel or a badly damaged print with scratches, dust and burns – with one key. Uses the game's own post-processing (HDRP), so menus,
 the diary and subtitles stay in colour.
 
 Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
@@ -21,7 +21,7 @@ Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
 | Key | Action |
 |---|---|
 | **F9** | Effect on/off |
-| **F10** | Next preset: Noir → Sepia → Old Film → your own → off |
+| **F10** | Next preset: Noir → Sepia → Old Film → Damaged Film → your own → off |
 | **F11** | Re-read a custom preset file (for tweaking) |
 
 ## Settings – `UserData\LibriaMods\LibriaMods.STWB.Noir.cfg`
@@ -29,7 +29,7 @@ Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
 | Setting | Default | |
 |---|---|---|
 | `ToggleKey` / `CycleKey` / `ReloadKey` | `F9` / `F10` / `F11` | Unity `KeyCode` names |
-| `Preset` | `Noir` | Preset used by F9 (`Noir`, `Sepia`, `Old Film` or a custom one) |
+| `Preset` | `Noir` | Preset used by F9 (`Noir`, `Sepia`, `Old Film`, `Damaged Film` or a custom one) |
 | `Enabled` | `false` | Effect on at startup (saved when you toggle) |
 | `FadeSeconds` | `0.6` | Fade time |
 | `VerboseLog` | `false` | Log every applied setting |
