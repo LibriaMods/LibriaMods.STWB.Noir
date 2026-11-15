@@ -4,6 +4,8 @@ A MelonLoader mod for **Syberia: The World Before** that turns the game black & 
 sepia, a worn 1930s newsreel or a badly damaged print with scratches, dust and burns – with one key. Uses the game's own post-processing (HDRP), so menus,
 the diary and subtitles stay in colour.
 
+Download: [Nexus Mods](https://www.nexusmods.com/syberiatheworldbefore/mods/6) · [GitHub releases](https://github.com/LibriaMods/LibriaMods.STWB.Noir/releases)
+
 Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
 
 ## Install
