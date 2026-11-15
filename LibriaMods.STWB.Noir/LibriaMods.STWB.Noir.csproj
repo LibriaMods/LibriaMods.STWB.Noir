@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Syberia Noir: a LibriaMods mod (ILibriaMod), loaded and hot-reloaded by LibriaMods.Loader.
+       Needs the LibriaMods.Shared repo cloned next to this one. -->
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <!-- Where Syberia: The World Before is installed. Override SyberiaTWBDir in ..\LibriaMods.user.props. -->
+    <SyberiaTWBDir Condition="'$(SyberiaTWBDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Syberia - The World Before</SyberiaTWBDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\LibriaMods.Shared\LibriaMods.Shared\LibriaMods.Shared.csproj" Private="false" />
+    <!-- Built alongside, so the loader can be installed with the mod. -->
+    <ProjectReference Include="..\..\LibriaMods.Shared\LibriaMods.Loader\LibriaMods.Loader.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <!-- If the game is installed: mod → UserData\LibriaMods\Mods (hot-reloaded), loader → Mods, shared lib → UserLibs. -->
+  <Target Name="InstallToGame" AfterTargets="Build" Condition="Exists('$(SyberiaTWBDir)\SyberiaTWB.exe')">
+    <MSBuild Projects="..\..\LibriaMods.Shared\LibriaMods.Loader\LibriaMods.Loader.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration)">
+      <Output TaskParameter="TargetOutputs" ItemName="LoaderDll" />
+    </MSBuild>
+    <ItemGroup>
+      <SharedLib Include="@(ReferencePath)" Condition="'%(Filename)' == 'LibriaMods.Shared'" />
+    </ItemGroup>
+    <Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SyberiaTWBDir)\UserData\LibriaMods\Mods" />
+    <Copy SourceFiles="@(LoaderDll)" DestinationFolder="$(SyberiaTWBDir)\Mods" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(SharedLib)" DestinationFolder="$(SyberiaTWBDir)\UserLibs" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

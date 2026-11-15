@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="LibriaMods.STWB.Noir/LibriaMods.STWB.Noir.csproj" />
+  <Project Path="../LibriaMods.Shared/LibriaMods.Shared/LibriaMods.Shared.csproj" />
+  <Project Path="../LibriaMods.Shared/LibriaMods.Loader/LibriaMods.Loader.csproj" />
+</Solution>
