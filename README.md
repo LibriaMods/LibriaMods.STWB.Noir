@@ -1,7 +1,7 @@
 # Syberia Noir
 
 A MelonLoader mod for **Syberia: The World Before** that turns the game black & white – film noir,
-sepia, a worn 1930s newsreel or a badly damaged print with scratches, dust and burns – with one key. Uses the game's own post-processing (HDRP), so menus,
+sepia, a worn 1930s newsreel or a badly damaged print – or an old VHS tape, a CRT TV, 1950s Technicolor or a Super 8 home movie, with one key. Uses the game's own post-processing (HDRP), so menus,
 the diary and subtitles stay in colour.
 
 Download: [Nexus Mods](https://www.nexusmods.com/syberiatheworldbefore/mods/6) · [GitHub releases](https://github.com/LibriaMods/LibriaMods.STWB.Noir/releases)
@@ -23,15 +23,32 @@ Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
 | Key | Action |
 |---|---|
 | **F9** | Effect on/off |
-| **F10** | Next preset: Noir → Noir Cold → Sepia → Old Film → Damaged Film → your own → off |
+| **F10** | Next preset (see below) → your own → off |
 | **F11** | Re-read a custom preset file (for tweaking) |
+
+## Presets
+
+| Preset | Look |
+|---|---|
+| **Noir** | Black & white, punchy contrast, light grain and vignette |
+| **Noir Cold** | Black & white with the blue tone of old film prints and CRT TVs |
+| **Sepia** | Warm old photograph |
+| **Old Film** | Noir plus a worn print: scratches, dust, hairs, flicker |
+| **Damaged Film** | Noir plus a badly damaged print: tracking bands, rolls, burns, scratches, dust |
+| **VHS** | Washed-out colour, colour bleed, glow, tracking noise, faint scanlines |
+| **CRT** | Curved tube with rounded corners, scanlines, glow |
+| **Technicolor** | Rich 1950s colour: deep reds, teal shadows, warm highlights |
+| **Super 8** | Home movie: warm faded colour, heavy grain, strong vignette, soft flicker |
+
+The presets are in [`Presets.cs`](LibriaMods.STWB.Noir/Presets.cs), in the mod itself, so with the loader's
+`AutoReload = true` a rebuild shows up in game straight away.
 
 ## Settings – `UserData\LibriaMods\LibriaMods.STWB.Noir.cfg`
 
 | Setting | Default | |
 |---|---|---|
 | `ToggleKey` / `CycleKey` / `ReloadKey` | `F9` / `F10` / `F11` | Unity `KeyCode` names |
-| `Preset` | `Noir` | Preset used by F9 (`Noir`, `Noir Cold`, `Sepia`, `Old Film`, `Damaged Film` or a custom one) |
+| `Preset` | `Noir` | Preset used by F9 (any preset name below, or a custom one) |
 | `Enabled` | `false` | Effect on at startup (saved when you toggle) |
 | `FadeSeconds` | `0.6` | Fade time |
 | `VerboseLog` | `false` | Log every applied setting |
