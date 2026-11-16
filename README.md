@@ -6,15 +6,15 @@ the diary and subtitles stay in colour.
 
 Download: [Nexus Mods](https://www.nexusmods.com/syberiatheworldbefore/mods/6) · [GitHub releases](https://github.com/LibriaMods/LibriaMods.STWB.Noir/releases)
 
-Built on [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared).
+Built on [LibriaMods.Unity.Shared](https://github.com/LibriaMods/LibriaMods.Unity.Shared).
 
 ## Install
 
 1. Install [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) 0.6+ (tested with 0.7.3) and run the game once.
 2. Extract the zip into the game folder (next to `SyberiaTWB.exe`):
    ```
-   Mods\LibriaMods.Loader.dll
-   UserLibs\LibriaMods.Shared.dll
+   Mods\LibriaMods.Unity.Loader.dll
+   UserLibs\LibriaMods.Unity.Shared.dll
    UserData\LibriaMods\Mods\LibriaMods.STWB.Noir.dll
    ```
 
@@ -56,13 +56,13 @@ The presets are in [`Presets.cs`](LibriaMods.STWB.Noir/Presets.cs), in the mod i
 ## Your own looks
 
 Drop `.ini` presets in `UserData\LibriaMods\Presets` – see the
-[preset format](https://github.com/LibriaMods/LibriaMods.Shared#custom-presets). Edit, press F11, see the result.
+[preset format](https://github.com/LibriaMods/LibriaMods.Unity.Shared#custom-presets). Edit, press F11, see the result.
 
 Works nicely with [Kate's Pace](https://github.com/LibriaMods/KatesPace).
 
 ## Building
 
-Clone this repo and [LibriaMods.Shared](https://github.com/LibriaMods/LibriaMods.Shared) side by side and
+Clone this repo and [LibriaMods.Unity.Shared](https://github.com/LibriaMods/LibriaMods.Unity.Shared) side by side and
 open `LibriaMods.STWB.Noir.slnx`. Unity and MelonLoader come from NuGet, so it builds without the game.
 
 If Syberia is installed, the build also installs it: the mod to `UserData\LibriaMods\Mods` (hot-reloaded by the

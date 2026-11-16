@@ -5,6 +5,6 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="LibriaMods.STWB.Noir/LibriaMods.STWB.Noir.csproj" />
-  <Project Path="../LibriaMods.Shared/LibriaMods.Shared/LibriaMods.Shared.csproj" />
-  <Project Path="../LibriaMods.Shared/LibriaMods.Loader/LibriaMods.Loader.csproj" />
+  <Project Path="../LibriaMods.Unity.Shared/LibriaMods.Unity.Shared/LibriaMods.Unity.Shared.csproj" />
+  <Project Path="../LibriaMods.Unity.Shared/LibriaMods.Unity.Loader/LibriaMods.Unity.Loader.csproj" />
 </Solution>

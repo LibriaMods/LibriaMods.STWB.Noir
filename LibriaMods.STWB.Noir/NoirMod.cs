@@ -1,4 +1,4 @@
-using LibriaMods.Shared;
+using LibriaMods.Unity.Shared;
 using UnityEngine;
 
 namespace LibriaMods.STWB.Noir
@@ -7,7 +7,7 @@ namespace LibriaMods.STWB.Noir
     /// Black & white "film noir" look for Syberia: The World Before.
     /// Settings: UserData\LibriaMods\LibriaMods.STWB.Noir.cfg
     /// </summary>
-    [LibriaMod("Syberia Noir", "1.1.0", Id = "LibriaMods.STWB.Noir")]
+    [LibriaMod("Syberia Noir", "1.1.1", Id = "LibriaMods.STWB.Noir")]
     [LibriaGame("Microids", "SyberiaTWB")]
     public class NoirMod : LibriaMod
     {

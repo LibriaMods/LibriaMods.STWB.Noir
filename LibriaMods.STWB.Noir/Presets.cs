@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 
-using LibriaMods.Shared;
+using LibriaMods.Unity.Shared;
 
 namespace LibriaMods.STWB.Noir
 {
     /// <summary>
     /// Syberia Noir's built-in presets, tuned on Syberia: The World Before (a dark HDRP game). They live in the mod,
-    /// not in LibriaMods.Shared, so the loader's hot reload picks up changes. Each targets HDRP, URP and PPv2 at once
+    /// not in LibriaMods.Unity.Shared, so the loader's hot reload picks up changes. Each targets HDRP, URP and PPv2 at once
     /// (sections a pipeline doesn't have are skipped); [FilmDamage] and [Screen] are LibriaMods' own overlays.
     /// A custom .ini with the same name in <see cref="Fx.CustomPresetsFolder"/> replaces a built-in preset.
     /// Black &amp; white with a tint uses the Channel Mixer: HDRP applies saturation after tinting,
