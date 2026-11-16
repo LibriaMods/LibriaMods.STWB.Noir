@@ -2,7 +2,7 @@
   <!-- Syberia Noir: a LibriaMods mod (ILibriaMod), loaded and hot-reloaded by LibriaMods.Loader.
        Needs the LibriaMods.Shared repo cloned next to this one. -->
   <PropertyGroup>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <!-- Where Syberia: The World Before is installed. Override SyberiaTWBDir in ..\LibriaMods.user.props. -->
     <SyberiaTWBDir Condition="'$(SyberiaTWBDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Syberia - The World Before</SyberiaTWBDir>
   </PropertyGroup>
