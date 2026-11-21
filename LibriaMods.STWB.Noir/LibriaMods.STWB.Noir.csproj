@@ -13,7 +13,7 @@
     <ProjectReference Include="..\..\LibriaMods.Unity.Shared\LibriaMods.Unity.Loader\LibriaMods.Unity.Loader.csproj" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
-  <!-- If the game is installed: mod → UserData\LibriaMods\Mods (hot-reloaded), loader → Mods, shared lib → UserLibs. -->
+  <!-- If the game is installed: mod → UserData\LibriaMods\Mods (hot-reloaded); loader → Mods and shared lib → UserLibs only if missing. -->
   <Target Name="InstallToGame" AfterTargets="Build" Condition="Exists('$(SyberiaTWBDir)\SyberiaTWB.exe')">
     <MSBuild Projects="..\..\LibriaMods.Unity.Shared\LibriaMods.Unity.Loader\LibriaMods.Unity.Loader.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration)">
       <Output TaskParameter="TargetOutputs" ItemName="LoaderDll" />
@@ -22,7 +22,9 @@
       <SharedLib Include="@(ReferencePath)" Condition="'%(Filename)' == 'LibriaMods.Unity.Shared'" />
     </ItemGroup>
     <Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SyberiaTWBDir)\UserData\LibriaMods\Mods" />
-    <Copy SourceFiles="@(LoaderDll)" DestinationFolder="$(SyberiaTWBDir)\Mods" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(SharedLib)" DestinationFolder="$(SyberiaTWBDir)\UserLibs" SkipUnchangedFiles="true" />
+    <!-- Loader and shared lib are copied only if missing: the game loads them once at startup, so replacing them
+         would need a restart. After changing LibriaMods.Unity.Shared, copy them yourself (and restart the game). -->
+    <Copy SourceFiles="@(LoaderDll)" DestinationFolder="$(SyberiaTWBDir)\Mods" Condition="!Exists('$(SyberiaTWBDir)\Mods\%(LoaderDll.Filename)%(LoaderDll.Extension)')" />
+    <Copy SourceFiles="@(SharedLib)" DestinationFolder="$(SyberiaTWBDir)\UserLibs" Condition="!Exists('$(SyberiaTWBDir)\UserLibs\%(SharedLib.Filename)%(SharedLib.Extension)')" />
   </Target>
 </Project>
